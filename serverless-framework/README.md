@@ -22,3 +22,8 @@ $ sls create --template aws-ruby --path ruby-sample --name ruby-sample
 $ cd ruby-sample    # 実行可能なディレクトリに移動
 $ sls invoke local --function hello
 ```
+
+### プラグインインストール
+```
+$ sls plugin install --name serverless-ruby-layer
+```
