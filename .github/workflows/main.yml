@@ -31,3 +31,10 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.7
+      - name: Generate Gem Layer
+        working-directory: ./serverless-framework/ruby-sample
+        run: ./layers/builds/build_sample_gems.sh
