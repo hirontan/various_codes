@@ -22,19 +22,20 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.18.1'
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+      - name: Install Dependencies
+        run: npm install serverless -g
 
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: 2.7
       - name: Generate Gem Layer
         working-directory: ./serverless-framework/ruby-sample
-        run: ./layers/builds/build_sample_gems.sh
+        run: |
+          yarn
+          ./layers/builds/build_sample_gems.sh
+          sls invoke local -f hello
