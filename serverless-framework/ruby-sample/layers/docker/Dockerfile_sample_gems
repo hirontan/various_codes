@@ -1,0 +1,7 @@
+FROM lambci/lambda:build-ruby2.7
+
+ADD layers/gemfiles/Gemfile_sample_gems /var/task/Gemfile
+ADD layers/gemfiles/Gemfile_sample_gems.lock /var/task/Gemfile.lock
+
+RUN yum -y install mysql-devel
+RUN bundle install --deployment

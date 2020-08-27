@@ -1,0 +1,6 @@
+source "https://rubygems.org"
+
+gem 'activesupport'
+gem 'activerecord-import'
+gem 'sora_geocoding'
+gem 'mysql2'
