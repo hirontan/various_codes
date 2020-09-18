@@ -62,8 +62,26 @@ while True:
     print(count)
     count += 1
 
-while True:
-    word = input('Enter:')
-    if word == 'ok':
-        break
-    print(next)
+# input 試してみる
+# while True:
+#     word = input('Enter:')
+#     if word == 'ok':
+#         break
+#     print(next)
+
+some_list = [1, 2, 3, 4, 5]
+i = 0
+# while i < len(some_list):
+#   print(some_list[i])
+#   i += 1
+
+for i in some_list:
+    print(i)
+
+for fruit in ['apple', 'banana', 'orange']:
+    # if fruit == 'banana':
+    #     print('stop eating')
+    #     break
+    print(fruit)
+else:
+    print('I ate all!')
