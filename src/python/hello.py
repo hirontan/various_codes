@@ -31,3 +31,16 @@ print(t)
 
 t = 1,  # カンマ入れるとタプルになる
 print(type(t))
+
+t = (1)  # こっちはinteger
+print(type(t))
+
+# タプルのアンパッキング
+num_tuple = (10, 20)
+x, y = num_tuple
+print(x, y)
+
+a = 100
+b = 200
+a, b = b, a
+print(a, b)
