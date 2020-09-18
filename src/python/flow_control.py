@@ -16,3 +16,30 @@ elif x == 0:
     print('zero')
 else:
     print('positive')
+
+is_ok = True
+
+if not is_ok:
+    print("hello")
+else:
+    print("else")
+
+# 1の場合でもTrue（値が入っている場合）。0の場合False（値が入っていない場合も）
+# False: 0, 0.0, '', [], {}, (), set()
+# is_ok = True
+is_ok = 1
+
+if is_ok:
+    print('OK!')
+else:
+    print("else")
+
+# null オブジェクト: None
+is_empty = None
+print(is_empty)
+
+if is_empty is None:
+    print('None!!')
+
+print(1 == True)
+print(1 is True)  # False になる。同じものであるかどうかを判定する
