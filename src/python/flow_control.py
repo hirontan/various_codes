@@ -85,3 +85,7 @@ for fruit in ['apple', 'banana', 'orange']:
     print(fruit)
 else:
     print('I ate all!')
+
+# _ を使うと、コードの中では使わないと判断できる
+for i in range(2, 10, 3):
+    print(i)
