@@ -208,3 +208,54 @@ def sample_func2(word):
 # change_words(l, sample_func)
 change_words(l, lambda word: word.capitalize())
 change_words(l, lambda word: word.lower())
+
+
+# ジェネレータ
+l = ['Good morning', 'Goof afternoon', 'Good night']
+
+for i in l:
+    print(i)
+
+print("###########")
+
+
+def counter(num=10):
+    for _ in range(num):
+        yield 'run'
+
+
+def greeting():
+    yield 'Good morning'
+    yield 'Goof afternoon'
+    yield 'Good night'
+
+# for g in greeting():
+#   print(g)
+
+
+g = greeting()
+c = counter()
+
+
+print(next(g))
+
+print(next(c))
+print(next(c))
+print(next(c))
+print(next(c))
+print(next(c))
+
+
+print('@@@@@')
+
+print(next(g))
+
+print(next(c))
+print(next(c))
+print(next(c))
+print(next(c))
+print(next(c))
+
+print('@@@@@')
+
+print(next(g))
