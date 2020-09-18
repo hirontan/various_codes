@@ -89,3 +89,8 @@ else:
 # _ を使うと、コードの中では使わないと判断できる
 for i in range(2, 10, 3):
     print(i)
+
+
+# indexをつける
+for i, fruit in enumerate(['apple', 'banana', 'orange']):
+    print(i, fruit)
