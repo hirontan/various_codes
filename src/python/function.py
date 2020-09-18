@@ -259,3 +259,20 @@ print(next(c))
 print('@@@@@')
 
 print(next(g))
+
+
+# ジェネレータ内包表記
+def g():
+    for i in range(10):
+        yield i
+
+
+g = g()
+# g = tuple(i for i in range(10))
+g = (i for i in range(10) if i % 2 == 0)
+
+# print(type(g))
+# print(g)
+
+for x in g:
+    print(x)
