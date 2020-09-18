@@ -64,3 +64,13 @@ print(d)
 del d['y']
 print(d)
 d.clear()
+
+# 集合
+a = {1, 2, 4, 7, 8}
+b = {3, 4, 6, 8}
+
+print(a - b)
+print(b - a)
+print(b & a)
+print(b | a)
+print(b ^ a)  # 排他
