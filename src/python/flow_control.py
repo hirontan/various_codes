@@ -43,3 +43,27 @@ if is_empty is None:
 
 print(1 == True)
 print(1 is True)  # False になる。同じものであるかどうかを判定する
+
+count = 0
+while count < 5:
+    print(count)
+    count += 1
+else:
+    print('done')
+
+count = 0
+while True:
+    if count >= 5:
+        break  # elseには入らない
+    if count == 2:
+        count += 1
+        continue
+
+    print(count)
+    count += 1
+
+while True:
+    word = input('Enter:')
+    if word == 'ok':
+        break
+    print(next)
