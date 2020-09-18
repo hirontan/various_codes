@@ -44,3 +44,23 @@ a = 100
 b = 200
 a, b = b, a
 print(a, b)
+
+# 辞書型
+d = {'x': 10, 'y': 20}
+print(d)
+d['z'] = 10000
+print(d)
+
+print(dict(a=10, b=20))
+
+print(d.keys())
+print(d.values())
+
+d2 = {'x': 1000, 'j': 2000}
+d.update(d2)
+print(d.get('x'))
+d.pop('x')
+print(d)
+del d['y']
+print(d)
+d.clear()
