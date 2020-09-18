@@ -11,3 +11,6 @@ y = math.log2(10)
 print(y)
 
 # print(help(math))
+
+print("hello")
+print("say \" I don\'t know\"")
