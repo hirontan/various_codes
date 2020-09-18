@@ -111,3 +111,15 @@ def example_func(param1, param2):
 
 
 print(example_func.__doc__)
+
+# 関数内だけで扱う関数
+
+
+def outer(a, b):
+    def plus(c, d):
+        return c + d
+    r = plus(a, b)
+    print(r)
+
+
+outer(1, 2)
