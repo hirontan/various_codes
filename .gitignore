@@ -1,3 +1,4 @@
 .bundle/
 .vendor/
 __pycache__
+src/python/dist/*
