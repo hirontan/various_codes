@@ -18,21 +18,34 @@ CCC
 DDD
 """
 
-with open("test.txt", 'r') as f:
-    # while True:
-    #     chunk = 2
-    #     line = f.read(chunk)
-    #     print(line)
-    #     if not line:
-    #         break
-    # ファイルの読み出し位置を戻したい
-    print(f.tell())
-    print(f.read(1))
-    f.seek(5)
-    print(f.read(1))
-    f.seek(14)
-    print(f.read(1))
-    f.seek(15)
-    print(f.read(1))
-    f.seek(5)
-    print(f.read(1))
+# 書き込み + 読み込み
+with open('test.txt', 'w+') as f:
+    f.write(s)
+    f.seek(0)
+    print(f.read())
+
+# 読み込み + 書き込み
+with open('test.txt', 'r+') as f:
+    f.write(s)
+    f.seek(0)
+    print(f.read())
+
+
+# with open("test.txt", 'r') as f:
+#     # while True:
+#     #     chunk = 2
+#     #     line = f.read(chunk)
+#     #     print(line)
+#     #     if not line:
+#     #         break
+#     # ファイルの読み出し位置を戻したい
+#     print(f.tell())
+#     print(f.read(1))
+#     f.seek(5)
+#     print(f.read(1))
+#     f.seek(14)
+#     print(f.read(1))
+#     f.seek(15)
+#     print(f.read(1))
+#     f.seek(5)
+#     print(f.read(1))
