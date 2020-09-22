@@ -1,0 +1,5 @@
+Hi $name.
+
+$contents
+
+Have a goof day
