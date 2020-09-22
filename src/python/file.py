@@ -19,9 +19,20 @@ DDD
 """
 
 with open("test.txt", 'r') as f:
-    while True:
-        chunk = 2
-        line = f.read(chunk)
-        print(line)
-        if not line:
-            break
+    # while True:
+    #     chunk = 2
+    #     line = f.read(chunk)
+    #     print(line)
+    #     if not line:
+    #         break
+    # ファイルの読み出し位置を戻したい
+    print(f.tell())
+    print(f.read(1))
+    f.seek(5)
+    print(f.read(1))
+    f.seek(14)
+    print(f.read(1))
+    f.seek(15)
+    print(f.read(1))
+    f.seek(5)
+    print(f.read(1))
