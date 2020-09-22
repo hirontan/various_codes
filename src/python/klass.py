@@ -3,6 +3,7 @@ from os import name
 
 
 class Person(object):
+    # コンストラクタ
     def __init__(self, name):
         self.name = name
         print(self.name)
@@ -14,6 +15,14 @@ class Person(object):
     def run(self, num):
         print('run' * num)
 
+    # デストラクタ
+    def __del__(self):
+        print('good bye')
+
 
 person = Person('Mike')
 person.say_somthing()
+
+del person
+
+print('#######')
