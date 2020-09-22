@@ -1,0 +1,5 @@
+# f = open('test.txt', 'w')
+f = open('test.txt', 'a')
+f.write('test\n')
+print('My', 'name', 'is', 'Mike', sep='#', file=f)
+f.close()
