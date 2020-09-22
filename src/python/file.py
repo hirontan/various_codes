@@ -8,6 +8,7 @@
 
 
 # with ステートメントを利用するとcloseを行ってくれる
+import string
 with open('test.txt', 'w') as f:
     f.write('test\n')
 
@@ -49,3 +50,18 @@ with open('test.txt', 'r+') as f:
 #     print(f.read(1))
 #     f.seek(5)
 #     print(f.read(1))
+
+
+s = """\
+
+Hi $name.
+
+$contents
+
+Have a goof day
+"""
+
+with open('./email_template.txt') as f:
+    t = string.Template(s)
+contents = t.substitute(name="Mike", contents="How are you?")
+print(contents)
