@@ -1,6 +1,7 @@
 # python setup.py sdist
 
-from distutils.core import setup
+# from distutils.core import setup
+from setuptools import setup, find_packages
 
 setup(
     name='my_package',
@@ -9,4 +10,5 @@ setup(
     license='Free',
     author='hirontan',
     description='Sample package'
+    test_suits='tests'
 )
