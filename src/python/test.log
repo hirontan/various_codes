@@ -1,2 +1,10 @@
 INFO:root:info test test
 2020-09-23 10:33:57,945:INFO:info test test
+2020-09-23 10:35:54,528:INFO:info test test
+2020-09-23 10:35:54,528:DEBUG:debug
+2020-09-23 10:40:05,921:INFO:info test test
+2020-09-23 10:40:05,922:DEBUG:debug
+2020-09-23 10:40:05,922:INFO:from logtest
+INFO:root:info test test
+DEBUG:__main__:debug
+INFO:log_test:from logtest
