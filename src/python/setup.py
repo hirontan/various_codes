@@ -9,6 +9,6 @@ setup(
     packages=['my_package', 'my_package.talk', 'my_package.tools'],
     license='Free',
     author='hirontan',
-    description='Sample package'
+    description='Sample package',
     test_suits='tests'
 )

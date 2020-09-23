@@ -11,3 +11,9 @@ $ pytest test_calcuration.py --os-name=mac -s
 ```
 $ pytest test_calcuration.py --cov=calcuration --cov-report term-missing
 ```
+
+## Tox
+- 仮想環境でテストを行う
+```
+$ tox
+```

@@ -1,0 +1,13 @@
+setup.cfg
+setup.py
+my_package/__init__.py
+my_package.egg-info/PKG-INFO
+my_package.egg-info/SOURCES.txt
+my_package.egg-info/dependency_links.txt
+my_package.egg-info/top_level.txt
+my_package/talk/__init__.py
+my_package/talk/animal.py
+my_package/talk/human.py
+my_package/tools/__init__.py
+my_package/tools/utils.py
+test/test_calcuration.py
