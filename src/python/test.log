@@ -8,3 +8,6 @@ INFO:root:info test test
 INFO:root:info test test
 DEBUG:__main__:debug
 INFO:log_test:from logtest
+INFO:root:info test test
+DEBUG:__main__:debug
+INFO:log_test:from logtest
