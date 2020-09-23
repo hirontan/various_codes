@@ -1,4 +1,5 @@
 .bundle/
 .vendor/
+.vscode/
 __pycache__
 src/python/dist/*
