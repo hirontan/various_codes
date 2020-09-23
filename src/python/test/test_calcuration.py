@@ -3,7 +3,6 @@ import pytest
 
 import os
 import calcuration
-from python.test.conftest import csv_file
 
 
 class TestCal(object):
@@ -11,11 +10,15 @@ class TestCal(object):
     def setup_class(cls):
         print('start')
         cls.cal = calcuration.Cal()
+        cls.test_dir = '/tmp/test_dir'
         cls.test_file_name = 'test.txt'
 
     @classmethod
     def teardown_class(cls):
+        import shutil
         print('end')
+        if os.path.exists(cls.test_dir):
+            shutil.rmtree(cls.test_dir)
         del cls.cal
 
     def setup_method(self, method):
@@ -26,6 +29,11 @@ class TestCal(object):
     def teardown_method(self, method):
         print('method={}'.format(method.__name__))
         # sdel self.cal
+
+    def test_save_no_dir(self):
+        self.cal.save(self.test_dir, self.test_file_name)
+        test_file_name = os.path.join(self.test_dir, self.test_file_name)
+        assert os.path.exists(test_file_name) is False
 
     # def test_add_num_and_double(self, request):
     #     request.config.getoption()
@@ -48,7 +56,7 @@ class TestCal(object):
         assert os.path.exists(test_file_path) is False
 
     # @pytest.mark.skip(reason='skip!')
-    @pytest.mark.skipif(is_release=False, reason='skip!')
+    # @pytest.mark.skipif(is_release=False, reason='skip!')
     def test_add_num_and_double_raise(self):
         with pytest.raises(ValueError):
             self.cal.add_num_and_double('1', '1')
