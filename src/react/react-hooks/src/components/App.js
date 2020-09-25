@@ -11,8 +11,11 @@ import AppContext from "../contexts/AppContext";
 import reducer from "../reducers";
 
 const App = () => {
+  const initialState = {
+    events: [],
+  };
   // 第三引数には初期化時に入れたい状態を格納できる
-  const [state, dispatch] = useReducer(reducer, []);
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
     <AppContext.Provider value={{ state, dispatch }}>
