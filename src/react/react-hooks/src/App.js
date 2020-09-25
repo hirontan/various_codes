@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const App = (props) => {
   // 状態, 設定
@@ -26,6 +26,24 @@ const App = (props) => {
   //   // setName(props.name);
   //   setState(props);
   // };
+
+  // rederingの後に実行される
+  // componentDidMount/componentDidUpdateに似ている
+  useEffect(() => {
+    console.log("This is like componentDidMount or comportnentDidUpdate.");
+  });
+
+  useEffect(() => {
+    console.log("This is like componentDidMount.");
+  }, []);
+
+  useEffect(() => {
+    console.log("This callback is for name only.");
+  }, [name]);
+
+  useEffect(() => {
+    console.log("This callback is for price only.");
+  }, [price]);
 
   return (
     <>
