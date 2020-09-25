@@ -53,4 +53,4 @@ const events = (state = [], action) => {
   }
 };
 
-export default evenets;
+export default events;
