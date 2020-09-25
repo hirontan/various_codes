@@ -1,5 +1,4 @@
 import { CREATE_EVENT, DELETE_EVENT, DELETE_ALL_EVENTS } from "../actions";
-import { unstable_renderSubtreeIntoContainer } from "react-dom";
 
 // stateが未定義の場合があるので、初期化しておく
 
