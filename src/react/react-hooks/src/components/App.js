@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React, { useEffect, useReducer } from "react";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -11,13 +11,23 @@ import AppContext from "../contexts/AppContext";
 import reducer from "../reducers";
 import OperationLogs from "./OperationLogs";
 
+const APP_KEY = "appWithRedux";
+
 const App = () => {
-  const initialState = {
-    events: [],
-    operationLogs: [],
-  };
+  const appState = localStorage.getItem(APP_KEY);
+  const initialState = appState
+    ? JSON.parse(appState)
+    : {
+        events: [],
+        operationLogs: [],
+      };
   // 第三引数には初期化時に入れたい状態を格納できる
   const [state, dispatch] = useReducer(reducer, initialState);
+
+  useEffect(() => {
+    // ローカルストレージに保存させるために文字列化必要
+    localStorage.setItem(APP_KEY, JSON.stringify(state));
+  }, [state]);
 
   return (
     <AppContext.Provider value={{ state, dispatch }}>
