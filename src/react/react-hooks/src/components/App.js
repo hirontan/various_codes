@@ -13,7 +13,7 @@ import reducer from "../reducers";
 const App = () => {
   const initialState = {
     events: [],
-    oprationLogs: [],
+    operationLogs: [],
   };
   // 第三引数には初期化時に入れたい状態を格納できる
   const [state, dispatch] = useReducer(reducer, initialState);
