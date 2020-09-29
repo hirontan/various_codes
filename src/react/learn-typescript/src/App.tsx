@@ -39,6 +39,13 @@ type LOGIN = {
   password: string;
 };
 
+const userA: USER = {
+  age: 30,
+  city: "Tokyo",
+  username: "xxx",
+  password: "yyy",
+};
+
 type USER = PROFILE & LOGIN;
 
 // Union Types（タイプを制限できる）
@@ -49,12 +56,13 @@ value = 10;
 let arrayUni: (number | string)[];
 arrayUni = [0, 1, 2, "hello"]; // numberとstring以外を格納しようとするとエラーになる
 
-const userA: USER = {
-  age: 30,
-  city: "Tokyo",
-  username: "xxx",
-  password: "yyy",
-};
+// Literal Types
+let company: "Facebook" | "Google" | "Amazon";
+company = "Amazon";
+
+let memory: 256 | 512;
+memory = 256;
+
 function App() {
   return (
     <div className="App">
