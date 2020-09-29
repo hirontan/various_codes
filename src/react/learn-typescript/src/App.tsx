@@ -1,6 +1,7 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import { type } from "os";
 
 // constは再代入できない
 const name = "hello";
@@ -27,6 +28,25 @@ const func1 = (x: number, y: number): number => {
   return x + y;
 };
 
+// Intersection Types（二つのタイプを結合することができる）
+type PROFILE = {
+  age: number;
+  city: string;
+};
+
+type LOGIN = {
+  username: string;
+  password: string;
+};
+
+type USER = PROFILE & LOGIN;
+
+const userA: USER = {
+  age: 30,
+  city: "Tokyo",
+  username: "xxx",
+  password: "yyy",
+};
 function App() {
   return (
     <div className="App">
