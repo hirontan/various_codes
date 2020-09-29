@@ -108,6 +108,17 @@ const PC2: PC = {
   OSType: OS.Mac,
 };
 
+// 型の互換性
+const comp1 = "test";
+let comp2: string = comp1;
+
+// 反対派できない
+// let comp3: string = "test"
+// let comp4: "test" = company
+
+let funcCmop1 = (x: number) => {};
+let funcComp2 = (x: string) => {};
+
 function App() {
   return (
     <div className="App">
