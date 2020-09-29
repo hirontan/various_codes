@@ -1,7 +1,10 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import { type } from "os";
+import Data from "./data.json";
+import TestComponent from "./TestComponent";
+
+type USERS = typeof Data;
 
 // constは再代入できない
 const name = "hello";
@@ -167,25 +170,19 @@ const funcGen4 = <T extends Props>(props: T) => {
   return { value: props.price };
 };
 
-function App() {
+// JSON型推論
+// https://jsonplaceholder.typicode.com/
+// 取得してきたJSONの型定義を取得できる
+type DATA_USERS = typeof Data;
+
+const App: React.FC = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <TestComponent text="hello from App" />
       </header>
     </div>
   );
-}
+};
 
 export default App;
