@@ -41,6 +41,14 @@ type LOGIN = {
 
 type USER = PROFILE & LOGIN;
 
+// Union Types（タイプを制限できる）
+let value: boolean | number;
+value = true;
+value = 10;
+
+let arrayUni: (number | string)[];
+arrayUni = [0, 1, 2, "hello"]; // numberとstring以外を格納しようとするとエラーになる
+
 const userA: USER = {
   age: 30,
   city: "Tokyo",
