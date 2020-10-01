@@ -18,7 +18,8 @@ const App: React.FC = () => {
   }, []);
 
   const newTask = (e: React.MouseEvent<HTMLButtonElement>) => {
-    db.collection("tasks");
+    db.collection("tasks").add({ title: input });
+    setInput("");
   };
 
   return (
