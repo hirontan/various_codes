@@ -9,9 +9,10 @@ const Login: React.FC = (props: any) => {
   const [password, setPassword] = useState("");
 
   useEffect(() => {
-    auth.onAuthStateChanged((user) => {
+    const unSub = auth.onAuthStateChanged((user) => {
       user && props.history.push("/");
     });
+    return () => unSub();
   }, [props.history]);
 
   return (
@@ -28,15 +29,19 @@ const Login: React.FC = (props: any) => {
             setEmail(e.target.value);
           }}
         />
-        <br />
+      </FormControl>
+      <br />
+      <FormControl>
         <TextField
-          InputLabelProps={{ shrink: true }}
+          InputLabelProps={{
+            shrink: true,
+          }}
           name="password"
           label="Password"
           type="password"
           value={password}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-            setEmail(e.target.value);
+            setPassword(e.target.value);
           }}
         />
       </FormControl>
