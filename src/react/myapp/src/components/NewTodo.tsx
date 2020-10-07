@@ -7,7 +7,7 @@ type NewTodoProps = {
 const NewTodo: React.FC<NewTodoProps> = (props) => {
   // DOM要素にアクセス
   const textInputRef = useRef<HTMLInputElement>(null);
-  const todoSunmitHandler = (event: React.FormEvent) => {
+  const todoSubmitHandler = (event: React.FormEvent) => {
     event.preventDefault();
     const enteredText = textInputRef.current!.value;
     console.log(enteredText);
