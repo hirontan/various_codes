@@ -35,7 +35,7 @@ var person = {
 // person.role[1] = 10;
 // person.role = [0, "admin", "user"];
 var favoriteActivities;
-favoriteActivities = ["Sports"];
+favoriteActivities = ["Sports", 5, true];
 console.log(person.name);
 for (var _i = 0, _a = person.hobbies; _i < _a.length; _i++) {
     var hobby = _a[_i];

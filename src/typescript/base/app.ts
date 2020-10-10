@@ -40,8 +40,8 @@ const person = {
 
 // person.role = [0, "admin", "user"];
 
-let favoriteActivities: string[];
-favoriteActivities = ["Sports"];
+let favoriteActivities: any[];
+favoriteActivities = ["Sports", 5, true];
 
 console.log(person.name);
 
