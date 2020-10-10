@@ -18,15 +18,21 @@
 //   role: [2, "author", true],
 // };
 
-const ADMIN = 0;
-const READ_ONLY = 1;
-const AUTHOR = 2;
+// const ADMIN = 0;
+// const READ_ONLY = 1;
+// const AUTHOR = 2;
+
+enum Role {
+  ADMIN,
+  READ_ONLY,
+  AUTHOR,
+}
 
 const person = {
   name: "test",
   age: 30,
   hobbies: ["Sports", "Cooking"],
-  role: ADMIN,
+  role: Role.ADMIN,
 };
 
 // person.role.push("admin");
@@ -44,6 +50,6 @@ for (const hobby of person.hobbies) {
   console.log(hobby.toUpperCase());
 }
 
-if (person.role === ADMIN) {
+if (person.role === Role.ADMIN) {
   console.log("管理者ユーザ");
 }
