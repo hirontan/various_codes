@@ -14,4 +14,13 @@ function printR(num: number): void {
 // }
 
 // voidの関数はundefined
+
+let combineValues: (a: number, b: number) => number;
+
+combineValues = add;
+// エラーになる
+// combineValues = 5;
+
+console.log(combineValues(8, 8));
+
 console.log(printR(add(5, 12)));
