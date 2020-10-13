@@ -15,6 +15,17 @@ function printR(num: number): void {
 
 // voidの関数はundefined
 
+// void型を返り値に設定しているとreturn文を書いても何も返ってこない
+function addAndHandle(n1: number, n2: number, cb: (num: number) => void) {
+  const result = n1 + n2;
+  cb(result);
+}
+
+addAndHandle(10, 20, (result) => {
+  console.log(result);
+  return result;
+});
+
 let combineValues: (a: number, b: number) => number;
 
 combineValues = add;

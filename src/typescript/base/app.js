@@ -11,6 +11,15 @@ function printR(num) {
 //   return;
 // }
 // voidの関数はundefined
+// void型を返り値に設定しているとreturn文を書いても何も返ってこない
+function addAndHandle(n1, n2, cb) {
+    var result = n1 + n2;
+    cb(result);
+}
+addAndHandle(10, 20, function (result) {
+    console.log(result);
+    return result;
+});
 var combineValues;
 combineValues = add;
 // エラーになる
