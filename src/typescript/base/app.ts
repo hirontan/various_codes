@@ -10,3 +10,12 @@ userInput = "Max";
 if (typeof userInput === "string") {
   userName = userInput;
 }
+
+// 値を返さない（絶対に返さないと明示的に指定できる：never型）
+//
+function generateError(message: string, code: number): never {
+  throw { message: message, errorCode: code };
+}
+
+const result = generateError("エラーが発生しました", 500);
+console.log(result);
