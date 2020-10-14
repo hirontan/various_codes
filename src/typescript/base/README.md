@@ -1,7 +1,6 @@
 # TypeScriptの基礎
 
 ## 初期構築
-
 ```
 $ npm install
 ```
@@ -18,7 +17,12 @@ $ npm start
 $ tsc app.ts
 ```
 
-### Watchモード
+### お試しWatchモード
 ```
 $ tsc app.ts -w
+```
+
+### 全体Watchモード
+```
+$ tsc -w
 ```
