@@ -17,3 +17,8 @@ $ npm start
 ```
 $ tsc app.ts
 ```
+
+### Watchモード
+```
+$ tsc app.ts -w
+```
