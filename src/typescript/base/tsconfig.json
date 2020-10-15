@@ -68,5 +68,5 @@
     "noEmitOnError": true  /* Do not emit outputs if any errors were reported. */
   },
   "exclude": ["**/*.dev.ts", "node_modules"], /* node_modulesはdefaultで設定されている */
-  "include": ["app.ts", "analytics.ts"]
+  "include": ["ts-config.ts", "analytics.ts"]
 }
