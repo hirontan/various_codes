@@ -1,30 +1,33 @@
-let appId = 'abc'
+let appId = "abc";
 
-let age: number
-age = 30
+let age: number;
+age = 30;
 
-const userName2 = 'Max'
+const userName2 = "Max";
 
-console.log(userName2)
+console.log(userName2);
 
 // クリックする
-const button = document.querySelector('button')!
-button.addEventListener('click', () => {
-  console.log('Clicked')
-})
+const button = document.querySelector("button")!;
+button.addEventListener("click", () => {
+  console.log("Clicked");
+});
 
-function clickHandler(message: string, age: string){
+function clickHandler(message: string, age: string) {
   // let userName='Max'
-  console.log('Clicked: ' + message)
+  console.log("Clicked: " + message + " age:" + age);
 }
 
 if (button) {
-  button.addEventListener('click', clickHandler.bind(null, "You're welcome!", 30))
+  button.addEventListener(
+    "click",
+    clickHandler.bind(null, "You're welcome!", "30")
+  );
 }
 
-function add(n1: number, n2:number){
+function add(n1: number, n2: number) {
   if (n1 + n2 > 0) {
-    return n1 + n2
+    return n1 + n2;
   }
   return;
 }
