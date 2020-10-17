@@ -51,3 +51,18 @@ if (age >= 20) {
 
 // isAdultが活きていない
 // console.log (isAdult_let)
+
+const hobbies = ["Sports", "Cooking"];
+const activeHobbies = ["Hiking"];
+
+// スプレッド演算子（中身を取り出して、リストとして活用する。取り出した値を個別の扱いとしてくれる）
+activeHobbies.push(...hobbies);
+
+const person = {
+  name: "Max",
+  age: 30,
+};
+
+const copiedPerson = {
+  ...person,
+};

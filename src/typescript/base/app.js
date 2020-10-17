@@ -1,3 +1,14 @@
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 // constは値を変更できない
 var userName = "Max";
 // userName = 'test'
@@ -41,3 +52,12 @@ if (age >= 20) {
 }
 // isAdultが活きていない
 // console.log (isAdult_let)
+var hobbies = ["Sports", "Cooking"];
+var activeHobbies = ["Hiking"];
+// スプレッド演算子（中身を取り出して、リストとして活用する。取り出した値を個別の扱いとしてくれる）
+activeHobbies.push.apply(activeHobbies, hobbies);
+var person = {
+    name: "Max",
+    age: 30
+};
+var copiedPerson = __assign({}, person);
