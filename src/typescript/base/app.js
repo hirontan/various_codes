@@ -25,15 +25,12 @@ age = 29;
 // };
 // 一つの式だけを利用する場合は、{}とreturnを省略できる
 // デフォルト値は右のパラメータのみ利用できる
-var add = function (a, b) {
-    if (b === void 0) { b = 1; }
-    return a + b;
-};
-var printOutput = function (output) {
-    console.log(output);
-};
+// const add = (a: number, b: number = 1) => a + b;
+// const printOutput: (output: string | number) => void = (output) => {
+//   console.log(output);
+// };
 // printOutput(add(2, 5));
-printOutput(add(2));
+// printOutput(add(2));
 var button = document.querySelector("button");
 if (button) {
     button.addEventListener("click", function (event) {
@@ -61,3 +58,16 @@ var person = {
     age: 30
 };
 var copiedPerson = __assign({}, person);
+// レストパラメータ
+var add = function () {
+    var numbers = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        numbers[_i] = arguments[_i];
+    }
+    var result = 0;
+    return numbers.reduce(function (curResult, curValue) {
+        return curResult + curValue;
+    }, 0);
+};
+var addedNumbers = add(5, 10, 2, 3.7);
+console.log(addedNumbers);

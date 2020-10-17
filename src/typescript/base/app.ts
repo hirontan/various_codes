@@ -19,14 +19,14 @@ age = 29;
 
 // 一つの式だけを利用する場合は、{}とreturnを省略できる
 // デフォルト値は右のパラメータのみ利用できる
-const add = (a: number, b: number = 1) => a + b;
+// const add = (a: number, b: number = 1) => a + b;
 
-const printOutput: (output: string | number) => void = (output) => {
-  console.log(output);
-};
+// const printOutput: (output: string | number) => void = (output) => {
+//   console.log(output);
+// };
 
 // printOutput(add(2, 5));
-printOutput(add(2));
+// printOutput(add(2));
 
 const button = document.querySelector("button");
 
@@ -66,3 +66,14 @@ const person = {
 const copiedPerson = {
   ...person,
 };
+
+// レストパラメータ
+const add = (...numbers: number[]) => {
+  let result = 0;
+  return numbers.reduce((curResult, curValue) => {
+    return curResult + curValue;
+  }, 0);
+};
+
+const addedNumbers = add(5, 10, 2, 3.7);
+console.log(addedNumbers);
