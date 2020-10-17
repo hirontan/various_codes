@@ -59,8 +59,8 @@ const activeHobbies = ["Hiking"];
 activeHobbies.push(...hobbies);
 
 const person = {
-  name: "Max",
-  age: 30,
+  firstName: "Max",
+  personAge: 30,
 };
 
 const copiedPerson = {
@@ -77,3 +77,17 @@ const add = (...numbers: number[]) => {
 
 const addedNumbers = add(5, 10, 2, 3.7);
 console.log(addedNumbers);
+
+// Destrunturing 分割代入
+// const hobby1 = hobbies[0];
+// const hobby2 = hobbies[1];
+
+const [hobby1, hobby2, ...remainingHobbies] = hobbies;
+
+console.log(hobbies, hobby1, hobby2);
+
+// プロパティ名は、personオブジェクトのキーを指定する必要がある
+// 格納先を変更する方法もある ex: [firstName: uName]
+const { firstName: uName, personAge } = person;
+
+console.log(uName, age, person);

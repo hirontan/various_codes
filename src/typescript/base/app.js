@@ -54,8 +54,8 @@ var activeHobbies = ["Hiking"];
 // スプレッド演算子（中身を取り出して、リストとして活用する。取り出した値を個別の扱いとしてくれる）
 activeHobbies.push.apply(activeHobbies, hobbies);
 var person = {
-    name: "Max",
-    age: 30
+    firstName: "Max",
+    personAge: 30
 };
 var copiedPerson = __assign({}, person);
 // レストパラメータ
@@ -71,3 +71,12 @@ var add = function () {
 };
 var addedNumbers = add(5, 10, 2, 3.7);
 console.log(addedNumbers);
+// Destrunturing 分割代入
+// const hobby1 = hobbies[0];
+// const hobby2 = hobbies[1];
+var hobby1 = hobbies[0], hobby2 = hobbies[1], remainingHobbies = hobbies.slice(2);
+console.log(hobbies, hobby1, hobby2);
+// プロパティ名は、personオブジェクトのキーを指定する必要がある
+// 格納先を変更する方法もある ex: [firstName: uName]
+var uName = person.firstName, personAge = person.personAge;
+console.log(uName, age, person);
