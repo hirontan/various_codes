@@ -18,13 +18,15 @@ age = 29;
 // };
 
 // 一つの式だけを利用する場合は、{}とreturnを省略できる
-const add = (a: number, b: number) => a + b;
+// デフォルト値は右のパラメータのみ利用できる
+const add = (a: number, b: number = 1) => a + b;
 
 const printOutput: (output: string | number) => void = (output) => {
   console.log(output);
 };
 
-printOutput(add(2, 5));
+// printOutput(add(2, 5));
+printOutput(add(2));
 
 const button = document.querySelector("button");
 

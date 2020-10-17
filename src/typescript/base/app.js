@@ -13,11 +13,16 @@ age = 29;
 //   return a + b;
 // };
 // 一つの式だけを利用する場合は、{}とreturnを省略できる
-var add = function (a, b) { return a + b; };
+// デフォルト値は右のパラメータのみ利用できる
+var add = function (a, b) {
+    if (b === void 0) { b = 1; }
+    return a + b;
+};
 var printOutput = function (output) {
     console.log(output);
 };
-printOutput(add(2, 5));
+// printOutput(add(2, 5));
+printOutput(add(2));
 var button = document.querySelector("button");
 if (button) {
     button.addEventListener("click", function (event) {
