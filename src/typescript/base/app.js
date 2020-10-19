@@ -1,82 +1,30 @@
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-// constは値を変更できない
-var userName = "Max";
-// userName = 'test'
-// letは値を変更できる
-var age = 30;
-age = 29;
-// function add(a: number, b: number){
-//   let result
-//   result = a + b
-//   return result
-// }
-// const add = (a: number, b: number) => {
-//   return a + b;
-// };
-// 一つの式だけを利用する場合は、{}とreturnを省略できる
-// デフォルト値は右のパラメータのみ利用できる
-// const add = (a: number, b: number = 1) => a + b;
-// const printOutput: (output: string | number) => void = (output) => {
-//   console.log(output);
-// };
-// printOutput(add(2, 5));
-// printOutput(add(2));
-var button = document.querySelector("button");
-if (button) {
-    button.addEventListener("click", function (event) {
-        console.log(event);
-    });
-}
-// var はグローバルスコープか、関数スコープのみしかない
-if (age >= 20) {
-    var isAdult = true;
-}
-// isAdultが活きている
-console.log(isAdult);
-// let はブロックスコープ
-if (age >= 20) {
-    var isAdult_let = true;
-}
-// isAdultが活きていない
-// console.log (isAdult_let)
-var hobbies = ["Sports", "Cooking"];
-var activeHobbies = ["Hiking"];
-// スプレッド演算子（中身を取り出して、リストとして活用する。取り出した値を個別の扱いとしてくれる）
-activeHobbies.push.apply(activeHobbies, hobbies);
-var person = {
-    firstName: "Max",
-    personAge: 30
-};
-var copiedPerson = __assign({}, person);
-// レストパラメータ
-var add = function () {
-    var numbers = [];
-    for (var _i = 0; _i < arguments.length; _i++) {
-        numbers[_i] = arguments[_i];
+var Department = /** @class */ (function () {
+    // 初期化用
+    function Department(n) {
+        this.employees = [];
+        this.name = n;
     }
-    var result = 0;
-    return numbers.reduce(function (curResult, curValue) {
-        return curResult + curValue;
-    }, 0);
-};
-var addedNumbers = add(5, 10, 2, 3.7);
-console.log(addedNumbers);
-// Destrunturing 分割代入
-// const hobby1 = hobbies[0];
-// const hobby2 = hobbies[1];
-var hobby1 = hobbies[0], hobby2 = hobbies[1], remainingHobbies = hobbies.slice(2);
-console.log(hobbies, hobby1, hobby2);
-// プロパティ名は、personオブジェクトのキーを指定する必要がある
-// 格納先を変更する方法もある ex: [firstName: uName]
-var uName = person.firstName, personAge = person.personAge;
-console.log(uName, age, person);
+    Department.prototype.describe = function () {
+        console.log("Department: " + this.name);
+    };
+    Department.prototype.addEmployee = function (employee) {
+        // Validation etc
+        this.employees.push(employee);
+    };
+    Department.prototype.printEmployeeInformation = function () {
+        console.log(this.employees.length);
+        console.log(this.employees);
+    };
+    return Department;
+}());
+var accounting = new Department("Accounting");
+console.log(accounting);
+accounting.addEmployee("Max");
+accounting.addEmployee("Manu");
+// accounting.employees[2] = "Anna";
+accounting.name = "New Name";
+accounting.describe();
+accounting.printEmployeeInformation();
+// const accountingCopy = { name: "DUMMY", describe: accounting.describe };
+// // 上記でダミーとしてオブジェクトが作られたので、undefinedになる
+// accountingCopy.describe();
