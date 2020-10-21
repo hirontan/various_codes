@@ -2,7 +2,9 @@
 class Department {
   // pricate id: string
   // name: string;
-  private employees: string[] = [];
+
+  // 外部からはアクセスできないけど、継承した先には利用できる
+  protected employees: string[] = [];
 
   // 初期化用
   // readonly: 開発者の意図を示すため
@@ -48,6 +50,14 @@ class AccountingDepartment extends Department {
   printReports() {
     console.log(this.reports);
   }
+
+  addEmployee(name: string) {
+    if (name === "Max") {
+      return;
+    }
+
+    this.employees.push(name);
+  }
 }
 
 // const accounting = new Department("d1", "Accounting");
@@ -81,3 +91,8 @@ console.log(it);
 const accounting = new AccountingDepartment("d2", []);
 accounting.addReport("Something");
 accounting.printReports();
+
+accounting.addEmployee("Max");
+accounting.addEmployee("Manu");
+
+accounting.printEmployeeInformation();

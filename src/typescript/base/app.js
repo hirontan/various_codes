@@ -20,6 +20,7 @@ var Department = /** @class */ (function () {
         this.name = name;
         // pricate id: string
         // name: string;
+        // 外部からはアクセスできないけど、継承した先には利用できる
         this.employees = [];
         // this.id = id
         // this.name = n;
@@ -63,6 +64,12 @@ var AccountingDepartment = /** @class */ (function (_super) {
     AccountingDepartment.prototype.printReports = function () {
         console.log(this.reports);
     };
+    AccountingDepartment.prototype.addEmployee = function (name) {
+        if (name === "Max") {
+            return;
+        }
+        this.employees.push(name);
+    };
     return AccountingDepartment;
 }(Department));
 // const accounting = new Department("d1", "Accounting");
@@ -87,3 +94,6 @@ console.log(it);
 var accounting = new AccountingDepartment("d2", []);
 accounting.addReport("Something");
 accounting.printReports();
+accounting.addEmployee("Max");
+accounting.addEmployee("Manu");
+accounting.printEmployeeInformation();
