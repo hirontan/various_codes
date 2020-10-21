@@ -1,5 +1,6 @@
 var Department = /** @class */ (function () {
     // 初期化用
+    // readonly: 開発者の意図を示すため
     function Department(id, name) {
         this.id = id;
         this.name = name;

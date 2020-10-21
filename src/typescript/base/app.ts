@@ -4,7 +4,8 @@ class Department {
   private employees: string[] = [];
 
   // 初期化用
-  constructor(private id: string, public name: string) {
+  // readonly: 開発者の意図を示すため
+  constructor(private readonly id: string, public name: string) {
     // this.id = id
     // this.name = n;
   }
