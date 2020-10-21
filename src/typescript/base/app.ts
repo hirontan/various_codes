@@ -1,3 +1,4 @@
+// ベースクラス
 class Department {
   // pricate id: string
   // name: string;
@@ -25,20 +26,58 @@ class Department {
   }
 }
 
-const accounting = new Department("d1", "Accounting");
+// 一つのクラスから継承できる
+// サブクラス
+class ITDepartment extends Department {
+  // admins: string[]
+  constructor(id: string, private admins: string[]) {
+    super(id, "IT");
+    this.admins = admins;
+  }
+}
 
-console.log(accounting);
+class AccountingDepartment extends Department {
+  constructor(id: string, private reports: string[]) {
+    super(id, "Accounting");
+  }
 
-accounting.addEmployee("Max");
-accounting.addEmployee("Manu");
+  addReport(text: string) {
+    this.reports.push(text);
+  }
+
+  printReports() {
+    console.log(this.reports);
+  }
+}
+
+// const accounting = new Department("d1", "Accounting");
+// const accounting = new ITDepartment("d1", "Accounting");
+const it = new ITDepartment("d1", ["Max"]);
+
+// console.log(accounting);
+
+// accounting.addEmployee("Max");
+// accounting.addEmployee("Manu");
+
+it.addEmployee("Max");
+it.addEmployee("Manu");
 
 // accounting.employees[2] = "Anna";
-accounting.name = "New Name";
+// accounting.name = "New Name";
+it.name = "New Name";
 
-accounting.describe();
-accounting.printEmployeeInformation();
+// accounting.describe();
+// accounting.printEmployeeInformation();
+it.describe();
+it.printEmployeeInformation();
+
+console.log(it);
 
 // const accountingCopy = { name: "DUMMY", describe: accounting.describe };
 
 // // 上記でダミーとしてオブジェクトが作られたので、undefinedになる
 // accountingCopy.describe();
+
+const accounting = new AccountingDepartment("d2", []);
+accounting.addReport("Something");
+accounting.printReports();
