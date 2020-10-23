@@ -26,3 +26,9 @@ $ tsc app.ts -w
 ```
 $ tsc -w
 ```
+
+### GetterとSetterを扱う場合
+- `Accessors are only available when targeting ECMAScript 5 and higher.`のエラーが発生するため、下記で実行する
+```
+$ tsc -t ES5 app.ts
+```
