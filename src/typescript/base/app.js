@@ -85,6 +85,13 @@ var AccountingDepartment = /** @class */ (function (_super) {
         enumerable: false,
         configurable: true
     });
+    AccountingDepartment.getInstance = function () {
+        if (this.instance) {
+            return this.instance;
+        }
+        this.instance = new AccountingDepartment("d2", []);
+        return this.instance;
+    };
     AccountingDepartment.prototype.describe = function () {
         console.log("会計部門 - ID: " + this.id);
     };
@@ -126,7 +133,11 @@ console.log(it);
 // const accountingCopy = { name: "DUMMY", describe: accounting.describe };
 // // 上記でダミーとしてオブジェクトが作られたので、undefinedになる
 // accountingCopy.describe();
-var accounting = new AccountingDepartment("d2", []);
+// const accounting = new AccountingDepartment("d2", []);
+var accounting = AccountingDepartment.getInstance();
+var accounting2 = AccountingDepartment.getInstance();
+// シングルトンパターンを使っているので、オブジェクトは同じ
+console.log(accounting, accounting2);
 accounting.mostRecentReport = "レポート";
 accounting.addReport("Something");
 console.log(accounting.mostRecentReport);

@@ -53,6 +53,7 @@ class ITDepartment extends Department {
 
 class AccountingDepartment extends Department {
   private lastReport: string;
+  private static instance: AccountingDepartment;
 
   // カプセル化のような仕組み
   get mostRecentReport() {
@@ -69,9 +70,17 @@ class AccountingDepartment extends Department {
     this.addReport(value);
   }
 
-  constructor(id: string, private reports: string[]) {
+  private constructor(id: string, private reports: string[]) {
     super(id, "Accounting");
     this.lastReport = reports[0];
+  }
+
+  static getInstance() {
+    if (this.instance) {
+      return this.instance;
+    }
+    this.instance = new AccountingDepartment("d2", []);
+    return this.instance;
   }
 
   describe() {
@@ -130,7 +139,12 @@ console.log(it);
 // // 上記でダミーとしてオブジェクトが作られたので、undefinedになる
 // accountingCopy.describe();
 
-const accounting = new AccountingDepartment("d2", []);
+// const accounting = new AccountingDepartment("d2", []);
+const accounting = AccountingDepartment.getInstance();
+const accounting2 = AccountingDepartment.getInstance();
+
+// シングルトンパターンを使っているので、オブジェクトは同じ
+console.log(accounting, accounting2);
 
 accounting.mostRecentReport = "レポート";
 accounting.addReport("Something");
