@@ -16,14 +16,18 @@ var Department = /** @class */ (function () {
     // 初期化用
     // readonly: 開発者の意図を示すため
     function Department(id, name) {
+        // this.id = id
+        // this.name = n;
         this.id = id;
         this.name = name;
         // pricate id: string
         // name: string;
         // 外部からはアクセスできないけど、継承した先には利用できる
         this.employees = [];
-        // this.id = id
-        // this.name = n;
+        // staticプロパティはインスタンスからはアクセスできない。
+        // もしアクセスするときは下記で行う
+        // console.log(this.fiscalYear);
+        console.log(Department.fiscalYear);
     }
     Department.createEmployee = function (name) {
         return { name: name };
@@ -39,6 +43,7 @@ var Department = /** @class */ (function () {
         console.log(this.employees.length);
         console.log(this.employees);
     };
+    Department.fiscalYear = 2020;
     return Department;
 }());
 // 一つのクラスから継承できる
@@ -95,7 +100,7 @@ var AccountingDepartment = /** @class */ (function (_super) {
     return AccountingDepartment;
 }(Department));
 var employee1 = Department.createEmployee("Max");
-console.log(employee1);
+console.log(employee1, Department.fiscalYear);
 // const accounting = new Department("d1", "Accounting");
 // const accounting = new ITDepartment("d1", "Accounting");
 var it = new ITDepartment("d1", ["Max"]);

@@ -1,5 +1,6 @@
 // ベースクラス
 class Department {
+  static fiscalYear = 2020;
   // pricate id: string
   // name: string;
 
@@ -15,6 +16,11 @@ class Department {
   constructor(private readonly id: string, public name: string) {
     // this.id = id
     // this.name = n;
+
+    // staticプロパティはインスタンスからはアクセスできない。
+    // もしアクセスするときは下記で行う
+    // console.log(this.fiscalYear);
+    console.log(Department.fiscalYear);
   }
 
   describe(this: Department) {
@@ -84,7 +90,7 @@ class AccountingDepartment extends Department {
 }
 
 const employee1 = Department.createEmployee("Max");
-console.log(employee1);
+console.log(employee1, Department.fiscalYear);
 
 // const accounting = new Department("d1", "Accounting");
 // const accounting = new ITDepartment("d1", "Accounting");
