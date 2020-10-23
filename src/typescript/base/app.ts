@@ -6,6 +6,10 @@ class Department {
   // 外部からはアクセスできないけど、継承した先には利用できる
   protected employees: string[] = [];
 
+  static createEmployee(name: string) {
+    return { name: name };
+  }
+
   // 初期化用
   // readonly: 開発者の意図を示すため
   constructor(private readonly id: string, public name: string) {
@@ -79,9 +83,15 @@ class AccountingDepartment extends Department {
   }
 }
 
+const employee1 = Department.createEmployee("Max");
+console.log(employee1);
+
 // const accounting = new Department("d1", "Accounting");
 // const accounting = new ITDepartment("d1", "Accounting");
 const it = new ITDepartment("d1", ["Max"]);
+
+// Math.PI
+// Math.pow;
 
 // console.log(accounting);
 

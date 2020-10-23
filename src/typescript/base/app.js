@@ -25,6 +25,9 @@ var Department = /** @class */ (function () {
         // this.id = id
         // this.name = n;
     }
+    Department.createEmployee = function (name) {
+        return { name: name };
+    };
     Department.prototype.describe = function () {
         console.log("Department (" + this.id + "): " + this.name);
     };
@@ -91,9 +94,13 @@ var AccountingDepartment = /** @class */ (function (_super) {
     };
     return AccountingDepartment;
 }(Department));
+var employee1 = Department.createEmployee("Max");
+console.log(employee1);
 // const accounting = new Department("d1", "Accounting");
 // const accounting = new ITDepartment("d1", "Accounting");
 var it = new ITDepartment("d1", ["Max"]);
+// Math.PI
+// Math.pow;
 // console.log(accounting);
 // accounting.addEmployee("Max");
 // accounting.addEmployee("Manu");
