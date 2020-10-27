@@ -15,9 +15,14 @@
 //   greet(phrase: string): void;
 // };
 
-interface Greetable {
+interface Named {
   // readonlyは初期化の時に一度だけ扱えるようになる
   readonly name: string;
+}
+
+// 一部のオブジェクトで必要な場合、インターフェースを分ける必要があるかもしれない
+// classは一つしか継承できないが、インターフェースは複数継承できる
+interface Greetable extends Named {
   greet(phrase: string): void;
 }
 
