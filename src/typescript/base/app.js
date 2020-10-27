@@ -2,6 +2,10 @@
 // interface Person {
 //   name: string;
 //   age: number;
+var add;
+add = function (n1, n2) {
+    return n1 + n2;
+};
 var Person = /** @class */ (function () {
     function Person(n) {
         this.age = 30;

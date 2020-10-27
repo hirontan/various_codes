@@ -15,6 +15,19 @@
 //   greet(phrase: string): void;
 // };
 
+// type AddFn = (a: number, b: number) => number;
+// カスタム型と似たようなもの
+interface AddFn {
+  // 匿名メソッドのようなもの
+  (a: number, b: number): number;
+}
+
+let add: AddFn;
+
+add = (n1: number, n2: number) => {
+  return n1 + n2;
+};
+
 interface Named {
   // readonlyは初期化の時に一度だけ扱えるようになる
   readonly name: string;
