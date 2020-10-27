@@ -16,11 +16,13 @@
 // };
 
 interface Greetable {
-  name: string;
+  // readonlyは初期化の時に一度だけ扱えるようになる
+  readonly name: string;
   greet(phrase: string): void;
 }
 
 class Person implements Greetable {
+  // readonlyと推測されている
   name: string;
   age = 30;
 
