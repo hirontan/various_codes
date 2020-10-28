@@ -30,7 +30,8 @@ add = (n1: number, n2: number) => {
 
 interface Named {
   // readonlyは初期化の時に一度だけ扱えるようになる
-  readonly name: string;
+  readonly name?: string;
+  outputName?: string; // 任意のプロパティ
 }
 
 // 一部のオブジェクトで必要な場合、インターフェースを分ける必要があるかもしれない
@@ -41,15 +42,21 @@ interface Greetable extends Named {
 
 class Person implements Greetable {
   // readonlyと推測されている
-  name: string;
+  name?: string;
   age = 30;
 
-  constructor(n: string) {
-    this.name = n;
+  constructor(n?: string) {
+    if (n) {
+      this.name = n;
+    }
   }
 
   greet(phrase: string) {
-    console.log(phrase + " " + this.name);
+    if (this.name) {
+      console.log(phrase + " " + this.name);
+    } else {
+      console.log("Hi!");
+    }
   }
 }
 
