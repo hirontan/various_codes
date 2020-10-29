@@ -76,5 +76,5 @@
     "**/*.dev.ts",
     "node_modules"
   ] /* node_modulesはdefaultで設定されている */,
-  "include": ["app.ts", "analytics.ts"]
+  "include": ["class_interface.ts", "analytics.ts"]
 }
