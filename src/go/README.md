@@ -14,3 +14,6 @@
 ##### パッケージのインストール
 - コマンドパレットに、`Go: Install/Update Tools`と入力
 - 全パッケージをチェックし、インストール
+
+## 参考
+- [A Tour of Go](https://go-tour-jp.appspot.com/welcome/1)
