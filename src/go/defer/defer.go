@@ -9,5 +9,9 @@ func main() {
 		defer fmt.Println(i)
 	}
 
+	defer fmt.Println("１番目")
+	defer fmt.Println("２番目")
+	defer fmt.Println("３番目")
+
 	fmt.Println("Done")
 }
