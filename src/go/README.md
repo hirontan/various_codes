@@ -22,6 +22,7 @@
 ## 実行
 
 ### Hello WorldをWebブラウザに表示する
+* [アクセスするリンク](http://localhost:8080/test)
 ```
 $ cd web_hello_world
 $ go run main.go
