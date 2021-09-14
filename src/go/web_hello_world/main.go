@@ -6,7 +6,8 @@ import (
 )
 
 func handler(writer http.ResponseWriter, request *http.Request) {
-	fmt.Fprintf(writer, "Hello World!")
+	// URLのアドレスからパスの文字列を取得する
+	fmt.Fprintf(writer, "Hello World!, %s", request.URL.Path[1:])
 }
 
 func main() {
