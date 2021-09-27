@@ -16,7 +16,12 @@ docker-compose up -d --build --force-recreate
 composer create-project "laravel/laravel=5.7" sample
 ```
 
-### モデル作成
+### モデル作成: 例
 ```
 php artisan make:model Task -m -c -r
+```
+
+### DBマイグレーション
+```
+php artisan migrate
 ```
