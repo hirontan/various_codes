@@ -1,0 +1,5 @@
+# MySQL
+docker/mysql/data/*
+!/docker/mysql/data/.keep
+docker/mysql/conf.d/*
+!/docker/mysql/conf.d/.keep
