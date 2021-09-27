@@ -2,16 +2,9 @@
 
 ## 準備
 
-### Mac
-
-##### PHPインストール
+### Docker起動
 ```
-brew install php@7.3
-```
-
-##### Composerインストール
-```
-brew install composer
+docker-compose up -d --build --force-recreate
 ```
 
 
