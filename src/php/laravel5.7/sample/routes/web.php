@@ -12,5 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/tasks');
 });
+
+Route::get('/tasks', 'TaskController@index');
+Route::post('/tasks', 'TaskController@store');
+Route::delete('/tasks/{task}', 'TaskController@destrou'); // {task}でtask_idを受け取れる
+
+// httpsに強制的にアクセスする場合、利用する
+// \URL::forceScheme('https');
