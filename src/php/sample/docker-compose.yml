@@ -6,3 +6,14 @@ services:
       context: .
     volumes:
       - ./src/:/app
+
+  nginx:
+    build:
+      context: .
+      dockerfile: ./docker/nginx/Dockerfile
+    ports:
+      - 8081:80
+    depends_on:
+      - app
+    volumes:
+      - ./src/:/app
