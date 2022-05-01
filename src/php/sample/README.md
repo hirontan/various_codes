@@ -14,3 +14,8 @@
 $ php artisan --version
 Laravel Framework 9.10.1
 ```
+
+## Docker実行
+```
+docker-compose up --build --force-recreate -d
+```
