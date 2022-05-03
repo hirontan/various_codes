@@ -5,8 +5,7 @@ services:
     build:
       context: .
     volumes:
-      - ./src/:/app
-
+      - .:/app:cached
   nginx:
     build:
       context: .
@@ -16,7 +15,7 @@ services:
     depends_on:
       - app
     volumes:
-      - ./src/:/app
+      - .:/app
 
   db:
     build:
