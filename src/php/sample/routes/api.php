@@ -26,3 +26,9 @@ Route::post('test', static function(Request $request) {
     $request->validate(['text' => 'required|string']);
     return \App\Models\Sample::create(['text' => $request->input('text')]);
 });
+
+Route::get('/token/generate', function(){
+    $user = App\Models\User::find(1);
+    $token = $user->createToken('')->accessToken;
+    return response()->json(['token' => $token]);
+});
