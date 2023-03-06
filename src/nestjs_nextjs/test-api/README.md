@@ -51,6 +51,12 @@ $ yarn run start:dev
 $ yarn run start:prod
 ```
 
+## DB Migration
+
+```bash
+npx prisma migrate dev
+```
+
 ## Test
 
 ```bash
