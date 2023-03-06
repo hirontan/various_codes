@@ -57,6 +57,18 @@ $ yarn run start:prod
 npx prisma migrate dev
 ```
 
+### Prisma Studio
+
+```bash
+npx prisma studio
+```
+
+### モデルのデータ型を自動生成
+
+```bash
+npx prisma generate
+```
+
 ## Test
 
 ```bash
