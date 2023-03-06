@@ -39,4 +39,18 @@ export class AuthController {
       message: 'ok',
     };
   }
+
+  @HttpCode(HttpStatus.OK)
+  @Post('/logout')
+  logout(@Req() req: Request, @Res({ passthrough: true }) res: Response): Msg {
+    res.cookie('access_token', '', {
+      httpOnly: true,
+      secure: false,
+      sameSite: 'none',
+      path: '/',
+    });
+    return {
+      message: 'ok',
+    };
+  }
 }
