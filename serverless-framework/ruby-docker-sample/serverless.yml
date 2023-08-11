@@ -1,0 +1,10 @@
+service: ruby-docker-sample
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: ruby3.2
+
+functions:
+  hello:
+    handler: handler.hello
