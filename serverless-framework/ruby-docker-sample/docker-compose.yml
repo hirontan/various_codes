@@ -10,3 +10,13 @@ services:
       - ENVIROMNENT=development
     volumes:
       - .:/var/task:cached
+  db:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - 53306:3306
+    volumes:
+      - ./docker/mysql/conf.d:/etc/mysql/conf.d
+    cap_add:
+      - SYS_NICE
