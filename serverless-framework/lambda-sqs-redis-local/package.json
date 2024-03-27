@@ -1,0 +1,11 @@
+{
+  "name": "lambda-sqs-redis-local",
+  "description": "",
+  "version": "0.1.0",
+  "license": "UNLICENSED",
+  "private": true,
+  "devDependencies": {
+    "serverless-localstack": "*",
+    "serverless-offline": "*"
+  }
+}
