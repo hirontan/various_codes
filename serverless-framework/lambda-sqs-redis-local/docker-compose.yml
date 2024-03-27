@@ -1,0 +1,23 @@
+version: "3.8"
+services:
+  serverless:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    tty: true
+    environment:
+      - ENVIROMNENT=development
+    volumes:
+      - .:/var/task:cached
+  localstack:
+    image: localstack/localstack
+    ports:
+      - "54566:4566" # LocalStackのデフォルトポート
+    environment:
+      - SERVICES=sqs
+      - DEFAULT_REGION=ap-northeast-1
+      - DEBUG=1
+  redis:
+    image: redis
+    ports:
+      - "56379:6379" # Redisのデフォルトポート

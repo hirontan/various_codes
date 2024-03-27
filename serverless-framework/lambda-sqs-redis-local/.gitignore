@@ -54,3 +54,5 @@ build-iPhoneSimulator/
 
 # package directories
 node_modules
+
+sample_gems/**/*
