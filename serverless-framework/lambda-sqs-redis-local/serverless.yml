@@ -12,7 +12,6 @@ functions:
     handler: handler.hello
 
 plugins:
-  - serverless-localstack
   - serverless-offline
 
 custom:

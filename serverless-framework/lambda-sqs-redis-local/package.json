@@ -5,7 +5,6 @@
   "license": "UNLICENSED",
   "private": true,
   "devDependencies": {
-    "serverless-localstack": "*",
-    "serverless-offline": "*"
+    "serverless-offline": "v12.0.4"
   }
 }
