@@ -7,6 +7,7 @@ services:
     tty: true
     environment:
       - ENVIROMNENT=development
+      - AWS_QUEUE_URL=http://localstack:4566/000000000000/my-queue
     volumes:
       - .:/var/task:cached
   localstack:
