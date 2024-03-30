@@ -5,6 +5,7 @@
 ## 準備
 
 ```bash
+yarn
 ./layers/builds/build_gems.sh
 docker-compose up --build --force-recreate -d
 ```
