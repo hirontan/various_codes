@@ -10,9 +10,10 @@ provider:
 functions:
   hello:
     handler: handler.hello
+  redis_sqs_sample:
+    handler: src/redis_sqs_sample.execute
 
 plugins:
-  - serverless-localstack
   - serverless-offline
 
 custom:
