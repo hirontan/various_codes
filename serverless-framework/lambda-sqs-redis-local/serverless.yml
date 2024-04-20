@@ -10,7 +10,7 @@ provider:
 functions:
   hello:
     handler: handler.hello
-  redis_sqs_sample:
+  redisSqsSample:
     handler: src/redis_sqs_sample.execute
 
 plugins:
