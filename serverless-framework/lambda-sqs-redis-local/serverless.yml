@@ -3,7 +3,7 @@ frameworkVersion: "3"
 
 provider:
   name: aws
-  runtime: ruby3.3
+  runtime: ruby3.2
   stage: development
   region: ap-northeast-1
 
