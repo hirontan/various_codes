@@ -9,14 +9,17 @@ services:
       - AWS_QUEUE_URL=http://localstack:4566/000000000000/my-queue
     volumes:
       - .:/var/task:cached
+    depends_on:
+      - localstack
+      - redis
   localstack:
-    image: localstack/localstack
+    image: localstack/localstack:latest
     ports:
-      - "54566:4566" # LocalStackのデフォルトポート
+      - "54566:4566" # LocalStackのポート
     environment:
       - SERVICES=sqs
       - DEFAULT_REGION=ap-northeast-1
-      - DEBUG=1
+      - DATA_DIR=/tmp/localstack/data
   redis:
     image: redis
     ports:
