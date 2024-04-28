@@ -10,16 +10,15 @@ services:
     volumes:
       - .:/var/task:cached
     depends_on:
-      - localstack
+      - elasticmq
       - redis
-  localstack:
-    image: localstack/localstack:latest
+  elasticmq:
+    container_name: elasticmq
+    image: softwaremill/elasticmq:latest
     ports:
-      - "54566:4566" # LocalStackのポート
-    environment:
-      - SERVICES=sqs
-      - DEFAULT_REGION=ap-northeast-1
-      - DATA_DIR=/tmp/localstack/data
+      - 9324:9324
+    volumes:
+      - ./docker/elasticmq/conf/elasticmq.conf:/opt/elasticmq.conf
   redis:
     image: redis
     ports:
