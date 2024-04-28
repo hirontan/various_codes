@@ -17,5 +17,5 @@ docker-compose up --build --force-recreate -d
 
 ```bash
 docker-compose exec serverless sls offline start
-aws sqs send-message --queue-url http://localhost:9234/000000000000/my-queue-development --message-body "Hello World" --endpoint-url http://localhost:9324
+./scripts/test_queue.rb
 ```
