@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -e
+
+docker-compose up -d --build --force-recreate
+
+until curl 127.0.0.1:54566 > /dev/null 2>&1;
+do
+  echo "localstack is unavailable - waiting" && sleep 2 ;
+done
+echo "localstack is up"
+
+aws --endpoint-url http://127.0.0.1:54566 sqs create-queue --queue-name my-queue

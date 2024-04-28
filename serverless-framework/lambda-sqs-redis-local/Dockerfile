@@ -1,6 +1,6 @@
 FROM amazon/aws-lambda-ruby:3.3
 
-RUN dnf upgrade --releasever=2023.2.20231002 && curl -sL https://rpm.nodesource.com/setup_20.x | bash - \
+RUN dnf update -y && curl -sL https://rpm.nodesource.com/setup_20.x | bash - \
   && dnf -y install nodejs && dnf -y clean all \
   && npm install -g serverless
 
