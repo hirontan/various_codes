@@ -22,7 +22,7 @@ plugins:
 
 custom:
   serverless-offline-sqs:
-    autoCreate: true
+    autoCreate: false
     apiVersion: "2012-11-05"
     endpoint: http://elasticmq:9324
     region: ap-northeast-1
