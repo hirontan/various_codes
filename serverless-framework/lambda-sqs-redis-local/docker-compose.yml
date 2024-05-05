@@ -23,7 +23,7 @@ services:
     container_name: sample-redis
     image: redis
     ports:
-      - "56379:6379" # Redisのデフォルトポート
+      - "56379:6379"
   redis-commander:
     image: rediscommander/redis-commander
     container_name: sample-redis-commander
