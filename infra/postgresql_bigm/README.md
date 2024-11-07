@@ -5,7 +5,7 @@
 ## build
 
 ```bash
-docker buildx build --platform linux/amd64,linux/arm64 -t hirontan3/postgres-bigm:14.5 --push .
+docker buildx build --platform linux/amd64,linux/arm64 -t hirontan3/postgres-bigm:14.5.1 -t hirontan3/postgres-bigm:latest --push .
 ```
 
 ## docker hub url
