@@ -13,3 +13,5 @@ RUN git clone https://github.com/pgbigm/pg_bigm.git && \
 FROM postgres:14.5
 
 COPY --from=build /usr/lib/postgresql/14/lib/pg_bigm.so /usr/lib/postgresql/14/lib/
+COPY --from=build /usr/share/postgresql/14/extension/pg_bigm.control /usr/share/postgresql/14/extension/
+COPY --from=build /usr/share/postgresql/14/extension/pg_bigm--*.sql /usr/share/postgresql/14/extension/
