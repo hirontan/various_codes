@@ -14,8 +14,8 @@ docker cp \
     $CONTAINER:/var/task/vendor/bundle/ruby/3.3.0 \
     ${LAYER}/ruby/gems/3.3.0
 
-# docker cp \
-#     $CONTAINER:/usr/lib64/mysql ${LAYER}
-# mv ${LAYER}/mysql ${LAYER}/lib
+docker cp \
+    $CONTAINER:/usr/lib64/mysql ${LAYER}
+mv ${LAYER}/mysql ${LAYER}/lib
 
-# docker rm $CONTAINER --force
+docker rm $CONTAINER --force
