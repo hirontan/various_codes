@@ -1,7 +1,7 @@
 FROM amazon/aws-lambda-ruby:3.3
 
-RUN dnf update -y && curl -sL https://rpm.nodesource.com/setup_20.x | bash - \
-  && dnf -y install nodejs && yum -y clean all \
+RUN dnf update -y && curl -sL https://rpm.nodesource.com/setup_22.x | bash - \
+  && dnf -y install nodejs && dnf -y clean all \
   && npm install -g serverless
 
 WORKDIR /var/task/

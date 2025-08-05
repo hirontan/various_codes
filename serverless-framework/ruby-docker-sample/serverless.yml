@@ -1,9 +1,9 @@
 service: ruby-docker-sample
-frameworkVersion: "3"
+frameworkVersion: "4"
 
 provider:
   name: aws
-  runtime: ruby3.2
+  runtime: ruby3.3
 
 functions:
   hello:

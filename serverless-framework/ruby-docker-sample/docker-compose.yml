@@ -9,7 +9,7 @@ services:
     volumes:
       - .:/var/task:cached
   db:
-    image: mysql:latest
+    image: mysql:8.0.35
     environment:
       MYSQL_ROOT_PASSWORD: root
     ports:
